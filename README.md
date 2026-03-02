@@ -2,8 +2,11 @@
 
 An end-to-end healthcare analytics pipeline for structured patient disease datasets. This repository performs automated data cleaning, anomaly detection, clustering, dimensionality reduction, similarity modeling, and generates a structured PDF analytics report with visualizations.
 
+---
+
 ## Project Structure
 
+```
 INDIA_PATIENT_DISEASE_RECORDS/
 │
 ├── Analyzer.py
@@ -11,6 +14,7 @@ INDIA_PATIENT_DISEASE_RECORDS/
 │
 ├── Output/
 │   ├── Analytics_Report.pdf
+│   │
 │   ├── charts/
 │   │   ├── anomaly_detection.png
 │   │   ├── cluster_distribution.png
@@ -25,15 +29,20 @@ INDIA_PATIENT_DISEASE_RECORDS/
 │   │   ├── feature_importance.png
 │   │   ├── pca_projection.png
 │   │   └── pca_variance.png
+│   │
 │   ├── models/
 │   │   ├── scaler.pkl
 │   │   └── pca.pkl
+│   │
 │   └── recommendations/
 │       └── similarity_recommendations.csv
+```
+
+---
 
 ## Features
 
-Data cleaning pipeline:
+### Data Cleaning Pipeline
 - Removes exact duplicate records
 - Drops columns with excessive null values
 - Removes remaining null rows
@@ -41,103 +50,121 @@ Data cleaning pipeline:
 - Sorts dataset chronologically
 - Dynamically detects numeric features
 
-Exploratory data analysis:
+### Exploratory Data Analysis
 - Correlation heatmap
 - Feature distribution plots
 - PCA explained variance
 - PCA 2D projection
 
-Dimensionality reduction:
+### Dimensionality Reduction
 - Standard scaling
 - Principal Component Analysis
 - Explained variance reporting
 
-Anomaly detection:
+### Anomaly Detection
 - Isolation Forest
-- Visual anomaly projection
+- PCA-based anomaly visualization
 - Anomaly count reporting
 
-Clustering:
+### Clustering
 - KMeans clustering
 - Cluster projection visualization
 - Cluster distribution chart
 - Silhouette score evaluation
 
-Feature importance:
+### Feature Importance
 - Mutual Information based ranking
 - Non-linear dependency analysis
 
-Similarity engine:
+### Similarity Engine
 - Nearest Neighbors with cosine similarity
 - Top 5 similar record recommendations
 - Exported similarity CSV
 
-Automated report generation:
+### Automated Report Generation
 - Structured PDF analytics report
 - Embedded charts
 - Summary metrics
 - Chart explanations
 
+---
+
 ## Generated Outputs
 
 Visualizations are stored in:
-Output/charts/
+`Output/charts/`
 
 Model artifacts are stored in:
-Output/models/
+`Output/models/`
 
-Similarity results are stored in:
-Output/recommendations/similarity_recommendations.csv
+Similarity results:
+`Output/recommendations/similarity_recommendations.csv`
 
 Final PDF report:
-Output/Analytics_Report.pdf
+`Output/Analytics_Report.pdf`
+
+---
 
 ## Installation
 
+```
 pip install numpy pandas matplotlib seaborn scikit-learn reportlab
+```
+
+---
 
 ## Usage
 
 Run locally:
+```
 python Analyzer.py
+```
 
 Run on Kaggle:
-Upload the script, attach the dataset, execute the notebook. Outputs will be saved to /kaggle/working/Output.
+Upload the script, attach the dataset, execute the notebook. Outputs will be saved to `/kaggle/working/Output`.
+
+---
 
 ## Pipeline Flow
 
+```
 Raw Dataset
-→ Cleaning and Null Handling
-→ Datetime Sorting
-→ Feature Scaling
-→ PCA
-→ Anomaly Detection
-→ Clustering
-→ Feature Importance
-→ Similarity Modeling
-→ PDF Report Generation
+    ↓
+Cleaning and Null Handling
+    ↓
+Datetime Sorting
+    ↓
+Feature Scaling
+    ↓
+PCA
+    ↓
+Anomaly Detection
+    ↓
+Clustering
+    ↓
+Feature Importance
+    ↓
+Similarity Modeling
+    ↓
+PDF Report Generation
+```
 
-## Use Cases
-
-Healthcare analytics research
-Disease trend exploration
-Hospital performance clustering
-Cost pattern analysis
-Patient similarity modeling
-Academic machine learning projects
-Kaggle experimentation
-Production analytics automation
+---
 
 ## Tech Stack
 
-Python
-Pandas
-NumPy
-Scikit-learn
-Matplotlib
-Seaborn
-ReportLab
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- ReportLab
+
+---
 
 ## License
 
-Apache 2.0
+This project is licensed under the Apache License 2.0.
+
+See the `LICENSE` file for full details.
